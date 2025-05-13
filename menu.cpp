@@ -75,6 +75,28 @@ cout<<"hallo saya menu "<<pesan;
 getch();
 }
 
+void SortingArray() {
+    system("cls");
+    if (n == 0) {
+        cout << "Data kosong. Masukkan data dulu!";
+    } else {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        cout << "DATA BERHASIL DI SORTING (Ascending)!\n";
+        cout << "\nArray Setelah Disorting:\n";
+        for (int i = 0; i < n; i++) {
+            cout << "Data ke-" << i + 1 << " = " << arr[i] << endl;
+        }
+    }
+    getch();
+}
 
 int main() {
 char pl;
@@ -91,8 +113,7 @@ do
     OutputArray();
     break;  
    case '3':
-    mPertama("ke- tiga");
-    /* code */
+    SortingArray();
     break;  
    case '4':
     Info();
